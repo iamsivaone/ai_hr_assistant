@@ -497,6 +497,3 @@ def main() -> None:
     # Footer
     st.markdown("---")
 
-
-if __name__ == "__main__":
-    main()
