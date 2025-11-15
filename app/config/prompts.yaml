@@ -1,0 +1,57 @@
+resume_chat_prompt: |
+  You are a helpful AI assistant answering questions based ONLY on the provided resume context.
+
+  Resume Context:
+  {context}
+
+  Conversation so far:
+  {history}
+
+  User question: {question}
+
+  Answer concisely and accurately.
+
+
+resume_summarizer_prompt: |
+  You are a helpful AI assistant. Extract structured information from the following resume text.
+
+  Requirements:
+  - Return **only a JSON object**. Do not include explanations or Markdown code fences.
+  - Use these keys exactly: "name", "professional_summary", "total_experience", "key_skills", "education", "recent_work_experience".
+  - "key_skills" should be a JSON array of strings.
+  - "recent_work_experience" should be a JSON array of objects with keys: "position", "company", "duration", "responsibilities" (array of strings).
+
+  Resume Text:
+  {text}
+
+  Example output:
+  {{
+    "name": "John Doe",
+    "professional_summary": "Experienced Python developer...",
+    "total_experience": "5 years",
+    "key_skills": ["Python", "Machine Learning", "Deep Learning"],
+    "education": "Bachelor of Science in Computer Science, University XYZ",
+    "recent_work_experience": [
+      {{
+        "position": "AI Developer",
+        "company": "TechCorp",
+        "duration": "2019 - Present",
+        "responsibilities": ["Developed ML models", "Built AI applications"]
+      }}
+    ]
+  }}
+
+
+resume_matching_prompt:
+  description: "LLM scoring prompt for resume-job matching"
+  template: |
+    You are an expert technical recruiter. Evaluate how well the candidate's resume chunk matches the job description.
+
+    Return ONLY a JSON object with this structure:
+    {"score": 0-100}
+
+    Job Description:
+    {jd_text}
+
+    Resume Chunk:
+    {chunk_text}
