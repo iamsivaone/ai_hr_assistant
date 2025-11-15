@@ -13,3 +13,5 @@ MAX_CHUNK=1000
 CHUNK_OVERLAP=100
 
 LOG_LEVEL=INFO
+
+PROMPTS_FILE=./app/config/prompts.yaml

@@ -32,7 +32,7 @@ class ResumeMatcher:
         print(f"Initialized SentenceTransformer model {model_name}")
         # Precompute JD embedding once
         self.jd_embedding = self.model.encode([self.jd_text], convert_to_numpy=True)[0]
-        print(f"Precomputed JD embedding shape: {self.jdembedding.shape}")
+        print(f"Precomputed JD embedding shape: {self.jd_embedding.shape}")
 
         # Initialize Groq LLM (same as summarizer)
         try:

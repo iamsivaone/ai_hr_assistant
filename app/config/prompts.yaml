@@ -42,13 +42,11 @@ resume_summarizer_prompt: |
   }}
 
 
-resume_matching_prompt:
-  description: "LLM scoring prompt for resume-job matching"
-  template: |
+resume_matching_prompt: |
     You are an expert technical recruiter. Evaluate how well the candidate's resume chunk matches the job description.
 
     Return ONLY a JSON object with this structure:
-    {"score": 0-100}
+    {{"score": 0-100}}
 
     Job Description:
     {jd_text}

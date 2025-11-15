@@ -3,8 +3,6 @@ import uuid
 import logging
 import sys
 
-from app.utils.utils import extract_text
-
 sys.path.append(str(Path(__file__).resolve().parents[1]))
 from typing import Dict, Any
 
@@ -16,6 +14,7 @@ from app.config.settings import settings
 from app.services.summarizer import ResumeSummarizer
 from app.services.chatbot import ResumeChatBot
 from app.utils.file_utils import save_upload, is_allowed
+from app.utils.utils import extract_text
 
 # Configure basic logging
 logging.basicConfig(level=settings.log_level)

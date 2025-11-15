@@ -6,7 +6,7 @@ import re
 from typing import Dict
 
 from app.utils.text_utils import clean_text
-from app.config import settings
+from app.config.settings import settings
 
 
 def load_prompt(key: str) -> str:
@@ -40,7 +40,7 @@ def extract_text_from_pdf(path: str) -> str:
             page_text = page.extract_text() or ""
             text.append(page_text)
     return "\n".join(text)
-
+    
 
 def extract_text_from_docx(path: str) -> str:
     """
